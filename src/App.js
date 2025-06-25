@@ -18,27 +18,34 @@ function App() {
 
             <div className="movie_container">
               <img src={image}/>
-         
-            
             <div className="item_container">
+            <div className="title_year" >
             <div>
-              <p>{title}</p>
+              <p className="body_32_regular">{title}</p>
             </div>
 
             <div>
-              <p>{year}</p>
+              <p className="body_16_regular">{year}</p>
+            </div>
+            </div>
+            
+            <div>
+              <p className="body_24_bold">Reviews</p>
             </div>
 
+            <div className="userName_review">
             <div>
-              <p>{name}</p>
+              <p className="body_16_bold">{name}</p>
             </div>
 
              <div>
               <p>{review}</p>
             </div>
             </div>
-
             </div>
+           <button className="delete_btn body_20_bold">Delete from the list</button>
+            </div>
+              
             </div>);
         }))}
       </div>

@@ -1,31 +1,106 @@
+
 .movie_container {
-  position: relative;      /* ✅ Important: allows absolute positioning of children */
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: black;
   border-radius: 32px;
-  overflow: hidden;        /* ✅ Makes sure content doesn’t spill out of rounded corners */
   width: 100%;
   max-width: 600px;
+  padding-bottom: 390px; /* 👈 adds space below image so .item_container fits */
+  margin-bottom: 80px;   /* 👈 space between cards */
+}
+
+
+
+.body_32_regular {
+  font-size: 32px;
+}
+
+.body_24_bold {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.body_20_bold {
+   font-size: 20px;
+  font-weight: 700;
+}
+
+.body_16_regular {
+  font-size: 16px;
+  color: #BFBFBF;
+}
+
+.body_16_bold {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C7C7C;
+}
+
+p {
+  margin: 0px;
 }
 
 img {
   width: 100%;
   max-width: 600px;
+  height: auto;
   display: block;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
 }
 
 .item_container {
-  position: absolute;      /* ✅ Makes this overlay the image */
-  bottom: 10;               /* ✅ Positions it at the bottom of the parent */
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.6);  /* ✅ Semi-transparent background for readability */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 120px; /* 👈 makes it pop out of the container */
+  background: #1C1C1C;
   color: aliceblue;
-  padding: 16px;
+  padding: 20px 16px;
+  gap: 16px;
   text-align: center;
+  border-radius: 20px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
 
-p {
-  margin: 8px 0;
+.title_year {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
 }
+
+.userName_review{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.delete_btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 32px; /* 👈 slightly below .item_container */
+    background: transparent;
+  border: 2px solid #FCC434;
+  color: #FCC434;
+  padding: 12px 24px;
+  border-radius: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.delete_btn:hover {
+  background: #FCC434;
+  color: black;
+}
+
+
