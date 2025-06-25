@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { data } from "./data";
+import './App.css'; 
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [movies, setMovies] = useState(data);
+  console.log(data);
+
+
+  return(
+    <div>
+      <h1>list of {movies.length} movies</h1>
+    
+        {movies.map((element =>  {
+          const {id,  image, title, year, name, review} = element;
+
+          return(<div key={id}>
+
+            <div className="movie_container">
+              <img src={image}/>
+         
+            
+            <div className="item_container">
+            <div>
+              <p>{title}</p>
+            </div>
+
+            <div>
+              <p>{year}</p>
+            </div>
+
+            <div>
+              <p>{name}</p>
+            </div>
+
+             <div>
+              <p>{review}</p>
+            </div>
+            </div>
+
+            </div>
+            </div>);
+        }))}
+      </div>
+ 
+  )
+
 }
 
 export default App;
