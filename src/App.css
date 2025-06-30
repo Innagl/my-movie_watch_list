@@ -82,6 +82,31 @@ img {
   margin-top: 24px;
 }
 
+.review-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.name_reviwText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+svg {
+  background-color: #000000;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+svg:hover {
+   background-color: #333333;
+}
+
 .delete_btn {
   position: absolute;
   left: 50%;
