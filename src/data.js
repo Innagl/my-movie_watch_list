@@ -11,8 +11,21 @@ export const data = [
         review: "Fresh score. This film is monumental. It’s thrilling and emotional, quiet and observant, loud and furious. Corbet’s film is a provocative portrait of the pursuit of the American dream."
       },
         {
-        name: "Test Name",
-        review: "ional, quiet and observant, loud and furious. Corbet’s film is a provocative portrait of the pursuit of the American dream."
+        name: "Test Name2",
+        review: "test 2"
+      },
+
+          {
+        name: "Test Name3",
+        review: "test 3"
+      },
+          {
+        name: "Test Name4",
+        review: "test 4"
+      },
+          {
+        name: "Test Name5",
+        review: "test 5"
       }
     
       // You can add more reviews here later!
@@ -29,6 +42,23 @@ export const data = [
       {
         name: "Chris Hemsworth",
         review: "Fresh score. This film is monumental. It’s thrilling and emotional, quiet and observant, loud and furious. Corbet’s film is a provocative portrait of the pursuit of the American dream."
+      },
+              {
+        name: "Test Name2",
+        review: "test 2"
+      },
+
+          {
+        name: "Test Name3",
+        review: "test 3"
+      },
+          {
+        name: "Test Name4",
+        review: "test 4"
+      },
+          {
+        name: "Test Name5",
+        review: "test 5"
       }
       // You can add more reviews here later!
     ]
