@@ -1,3 +1,10 @@
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px; /* space between cards */
+  padding: 40px;
+  justify-items: center; /* center the cards inside the grid cells */
+}
 
 .movie_container {
   position: relative;
@@ -10,8 +17,6 @@
   padding-bottom: 390px; /* 👈 adds space below image so .item_container fits */
   margin-bottom: 80px;   /* 👈 space between cards */
 }
-
-
 
 .body_32_regular {
   font-size: 32px;
@@ -29,6 +34,7 @@
 
 .body_16_regular {
   font-size: 16px;
+  line-height: 24px;
   color: #BFBFBF;
 }
 
@@ -45,7 +51,7 @@ p {
 img {
   width: 100%;
   max-width: 600px;
-  height: auto;
+  height: 62vh;
   display: block;
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
@@ -95,6 +101,13 @@ img {
   flex-direction: column;
   justify-content: center;
   gap: 8px;
+}
+
+.text-container {
+  display: flex;
+  width: 100%;
+  max-width: 110vw;
+  height: 10vh;
 }
 
 svg {

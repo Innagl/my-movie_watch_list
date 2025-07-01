@@ -17,14 +17,23 @@ function App() {
 
  }
 
- const previousUser = () => {
-   
+ const previousReview = () => {
+   setReviewIndex((reviewIndex =>{
+      reviewIndex --
+      if (reviewIndex < 0) {
+         return data.length -1
+      }
+      return reviewIndex;
+    }))
  }
 
-  const nextUser = () => {
-   setReviewIndex((user =>{
-      user ++
-      return user;
+  const nextReview = () => {
+   setReviewIndex((reviewIndex =>{
+      reviewIndex ++
+      if (reviewIndex > data.length - 1) {
+        reviewIndex = 0;
+      }
+      return reviewIndex;
     }))
  }
 
@@ -38,7 +47,7 @@ function App() {
          
 
           return(<div key={id}>
-
+            <div className="container-grid">
             <div className="movie_container">
               <img src={image}/>
             <div className="item_container">
@@ -60,15 +69,15 @@ function App() {
 
 
     <div className="review-container">
-      <svg onClick={previousUser} xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <svg onClick={previousReview} xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
   <path d="M15.9502 9.88379L5.8335 20.0005L15.9502 30.1171" stroke="#F2F2F2" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M34.1667 20H6.1167" stroke="#F2F2F2" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
     <div className="name_reviwText">
       <p className="body_16_bold">{firstReview.name}</p>
-      <p>{firstReview.review}</p>
+      <p className="text-container">{firstReview.review}</p>
     </div>
-   <svg onClick={nextUser} xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+   <svg onClick={nextReview} xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
   <rect width="40" height="40" rx="8" fill="black" fill-opacity="0.3"/>
   <path d="M24.0498 9.88379L34.1665 20.0005L24.0498 30.1171" stroke="#F2F2F2" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M5.8333 20H33.8833" stroke="#F2F2F2" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -82,6 +91,7 @@ function App() {
            <button className="delete_btn body_20_bold" onClick={() => removeMovie(id)}>Delete from the list</button>
             </div>
               
+            </div>
             </div>);
         }))}
           <div>
