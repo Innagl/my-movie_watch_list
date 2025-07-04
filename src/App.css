@@ -62,7 +62,7 @@ img {
   left: 50%;
   transform: translateX(-50%);
   bottom: 120px; /* 👈 makes it pop out of the container */
-  background: #1C1C1C;
+  background: hsl(0, 0%, 16%);
   color: aliceblue;
   padding: 20px 16px;
   gap: 16px;

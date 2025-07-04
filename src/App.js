@@ -18,18 +18,18 @@ function App() {
  }
 
  const previousReview = () => {
-   setReviewIndex((reviewIndex =>{
-      reviewIndex --
+   setReviewIndex((reviewIndex => {
+      reviewIndex --;
       if (reviewIndex < 0) {
-         return data.length -1
+         return data.length-1;
       }
       return reviewIndex;
     }))
  }
 
   const nextReview = () => {
-   setReviewIndex((reviewIndex =>{
-      reviewIndex ++
+   setReviewIndex((reviewIndex => {
+      reviewIndex ++;
       if (reviewIndex > data.length - 1) {
         reviewIndex = 0;
       }
@@ -44,6 +44,7 @@ function App() {
         {movies.map((element =>  {
           const {id,  image, title, year, reviews} = element;
           const firstReview = reviews[reviewIndex];
+          
          
 
           return(<div key={id}>
