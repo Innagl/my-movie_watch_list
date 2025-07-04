@@ -1,21 +1,74 @@
-.container-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px; /* space between cards */
-  padding: 40px;
-  justify-items: center; /* center the cards inside the grid cells */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #000000;
 }
 
-.movie_container {
+
+
+.main-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 72px;
+}
+
+.list-deleteAll {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline; /* 👈 makes h3 and button align by text baseline */
+  width: 100%;
+  max-width: 920px;
+  margin-top: 24px;
+}
+
+.highlight {
+  color: #FCC434;
+}
+
+.container-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1324px;
+  margin: 0 auto;
+}
+
+/* .movie_container {
   position: relative;
   display: flex;
   flex-direction: column;
   background-color: black;
   border-radius: 32px;
   width: 100%;
-  max-width: 600px;
-  padding-bottom: 390px; /* 👈 adds space below image so .item_container fits */
-  margin-bottom: 80px;   /* 👈 space between cards */
+  max-width: none;
+  padding-bottom: 390px; 
+  margin-bottom: 80px;   
+} */
+
+.movie_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #1C1C1C;
+  border: 2px solid #1C1C1C;
+  border-radius: 32px;
+  width: 100%;
+  max-width: 456px; /* ⬅ Controls card width */
+  padding-bottom: 390px;
+  margin-bottom: 40px;
+  flex: 1 1 456px; /* ⬅ Flex rule: grow/shrink with min size */
+}
+
+h1, h3 {
+  color: #fafafa;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 56px;
 }
 
 .body_32_regular {
@@ -50,8 +103,9 @@ p {
 
 img {
   width: 100%;
-  max-width: 600px;
-  height: 62vh;
+  /* max-width: 600px; */
+  max-width: 100%;
+  height: auto;
   display: block;
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
@@ -65,7 +119,7 @@ img {
   background: hsl(0, 0%, 16%);
   color: aliceblue;
   padding: 20px 16px;
-  gap: 16px;
+  gap: 12px;
   text-align: center;
   border-radius: 20px;
   width: 90%;
@@ -75,8 +129,8 @@ img {
 .title_year {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 40px;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
 .userName_review{
@@ -106,8 +160,9 @@ img {
 .text-container {
   display: flex;
   width: 100%;
-  max-width: 110vw;
-  height: 10vh;
+    height: 120px;
+  /* max-width: 110vw;
+  height: 10vh; */
 }
 
 svg {
@@ -120,15 +175,16 @@ svg:hover {
    background-color: #333333;
 }
 
-.delete_btn {
+.btn {
   position: absolute;
+  width: 280px;
   left: 50%;
   transform: translateX(-50%);
   bottom: 32px; /* 👈 slightly below .item_container */
-    background: transparent;
+  background: transparent;
   border: 2px solid #FCC434;
   color: #FCC434;
-  padding: 12px 24px;
+  padding: 12px 32px;
   border-radius: 32px;
   font-weight: bold;
   cursor: pointer;
@@ -136,9 +192,32 @@ svg:hover {
   cursor: pointer;
 }
 
-.delete_btn:hover {
+.btn:hover {
   background: #FCC434;
   color: black;
 }
+
+.text-btn {
+  background: none;
+  border: none;
+  color: #FCC434;
+  font-size: 16px;
+  font-weight: 600;
+  /* text-decoration: underline; ❌ remove this line */
+  cursor: pointer;
+  padding: 0;
+  margin-left: 16px;
+  transition: color 0.3s;
+
+  border-bottom: 1px dotted #FCC434; /* ✔ dotted underline */
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.text-btn:hover {
+  color: #FFD865;
+  border-bottom-color: #FFD865;
+}
+
 
 

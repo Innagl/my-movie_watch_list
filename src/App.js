@@ -38,28 +38,29 @@ function App() {
  }
 
   return(
-    <div>
-      <h1>list of {movies.length} movies</h1>
-    
+    <div className="main-container">
+      <h1>Movies picks</h1>
+
+     <div className="list-deleteAll">
+      <h3>List of <span className="highlight">{movies.length}</span> movies</h3>
+       <button className="text-btn" onClick={() => setMovies([])}>Delet all</button>
+       </div>
+        <div className="container-grid">
         {movies.map((element =>  {
           const {id,  image, title, year, reviews} = element;
           const firstReview = reviews[reviewIndex];
           
+        return(<div className="movie_container" key={id}>
          
-
-          return(<div key={id}>
-            <div className="container-grid">
-            <div className="movie_container">
               <img src={image}/>
             <div className="item_container">
             <div className="title_year" >
-            <div>
-              <p className="body_32_regular">{title}</p>
-            </div>
-
-            <div>
-              <p className="body_16_regular">{year}</p>
-            </div>
+               <div>
+                 <p className="body_32_regular">{title}</p>
+              </div>
+              <div>
+                 <p className="body_16_regular">{year}</p>
+              </div>
             </div>
             
             <div>
@@ -67,36 +68,34 @@ function App() {
             </div>
 
             <div className="userName_review">
+              <div className="review-container">
+                <svg onClick={previousReview} xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                  <path d="M15.9502 9.88379L5.8335 20.0005L15.9502 30.1171" stroke="#F2F2F2" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M34.1667 20H6.1167" stroke="#F2F2F2" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div className="name_reviwText">
+                  <p className="body_16_bold">{firstReview.name}</p>
+                  <p className="text-container">{firstReview.review}</p>
+                </div>
+                <svg onClick={nextReview} xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                   <rect width="40" height="40" rx="8" fill="black" fill-opacity="0.3"/>
+                   <path d="M24.0498 9.88379L34.1665 20.0005L24.0498 30.1171" stroke="#F2F2F2" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                   <path d="M5.8333 20H33.8833" stroke="#F2F2F2" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
 
-
-    <div className="review-container">
-      <svg onClick={previousReview} xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-  <path d="M15.9502 9.88379L5.8335 20.0005L15.9502 30.1171" stroke="#F2F2F2" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M34.1667 20H6.1167" stroke="#F2F2F2" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-    <div className="name_reviwText">
-      <p className="body_16_bold">{firstReview.name}</p>
-      <p className="text-container">{firstReview.review}</p>
-    </div>
-   <svg onClick={nextReview} xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-  <rect width="40" height="40" rx="8" fill="black" fill-opacity="0.3"/>
-  <path d="M24.0498 9.88379L34.1665 20.0005L24.0498 30.1171" stroke="#F2F2F2" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M5.8333 20H33.8833" stroke="#F2F2F2" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-    </div>
-
-</div>
+            </div>
 
 
             </div>
-           <button className="delete_btn body_20_bold" onClick={() => removeMovie(id)}>Delete from the list</button>
+           <button className="btn body_20_bold" onClick={() => removeMovie(id)}>Delete from the list</button>
             </div>
               
-            </div>
-            </div>);
+           
+        );
+
         }))}
-          <div>
-       <button onClick={() => setMovies([])}>delet all</button>
+    
        </div>
       </div>
  
