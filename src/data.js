@@ -125,7 +125,7 @@ export const data = [
       // Movie 5
 {
         id: 5,
-        image: "/images/the_god_father.png",
+        image: "/images/father.png",
         title: "The God Father",
         year: 1972,
         reviews: [
@@ -185,7 +185,7 @@ export const data = [
       // Movie 7
 {
         id: 7,
-        image: "/images/green_mile.png",
+        image: "/images/mile.png",
         title: "The green mile",
         year: 1999,
         reviews: [
