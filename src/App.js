@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { data } from "./data";
+import { reviews } from "./Reviews";
 import './App.css'; 
 
 function App() {
@@ -12,8 +13,8 @@ function App() {
 
 
   const removeMovie = (id) => {
-    let newMoviews = movies.filter(movie => movie.id !== id);
-     setMovies(newMoviews)
+    let newMovies = movies.filter(movie => movie.id !== id);
+     setMovies(newMovies)
 
  }
 
@@ -21,16 +22,16 @@ function App() {
    setReviewIndex((reviewIndex => {
       reviewIndex --;
       if (reviewIndex < 0) {
-         return data.length-1;
+         return reviewIndex.length-1;
       }
       return reviewIndex;
     }))
  }
 
   const nextReview = () => {
-   setReviewIndex((reviewIndex => {
+   setReviewIndex((review => {
       reviewIndex ++;
-      if (reviewIndex > data.length - 1) {
+      if (reviewIndex > reviews.length - 1) {
         reviewIndex = 0;
       }
       return reviewIndex;
@@ -43,12 +44,15 @@ function App() {
 
      <div className="list-deleteAll">
       <h3>List of <span className="highlight">{movies.length}</span> movies</h3>
-       <button className="text-btn" onClick={() => setMovies([])}>Delet all</button>
+       <button className="text-btn" onClick={() => setMovies([])}>Delete all</button>
        </div>
         <div className="container-grid">
         {movies.map((element =>  {
-          const {id,  image, title, year, reviews} = element;
-          const firstReview = reviews[reviewIndex];
+          const {id,  image, title, year} = element;
+          const movieReviewObject = reviews.find(item => item.id === id);
+          const reviewArray = movieReviewObject.reviews;
+          const firstReview = reviewArray[reviewIndex % reviewArray.length];
+
           
         return(<div className="movie_container" key={id}>
          

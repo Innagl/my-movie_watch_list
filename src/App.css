@@ -53,7 +53,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #1C1C1C;
-  border: 2px solid #1C1C1C;
+  border: 2px solid #2c2c2c;
   border-radius: 32px;
   width: 100%;
   max-width: 456px; /* ⬅ Controls card width */
@@ -215,8 +215,8 @@ svg:hover {
 }
 
 .text-btn:hover {
-  color: #FFD865;
-  border-bottom-color: #FFD865;
+  color: #ab8d33;
+  border-bottom-color: #ab8d33;
 }
 
 
